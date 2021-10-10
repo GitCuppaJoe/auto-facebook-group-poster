@@ -3,6 +3,6 @@ Content-Type: application/json
 
 {
     "title": "Plex recently added something!",
-    "hashtag": "#NewReleases",
+    "hashtag": "#NowPlaying",
     "url": "https://www.imdb.com/title/tt0111161"
 }
