@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker-build",
+            "type": "shell",
+            "command": "docker build --pull --rm -f ./docker/Dockerfile --target=debug -t gitcuppajoe/fbposter:debug ."
+        },
+        {
+            "label": "docker-run",
+            "type": "shell",
+            "command": "docker run -d --rm -it -e BOT_USERNAME='noadmin@email.com' -e BOT_PASSWORD='p@ssword' -e BOT_GROUP_ID='1234567891100' -p 4444:4444/tcp -p 5000:5000/tcp -p 5900:5900/tcp -p 7900:7900/tcp -p 5678:5678/tcp --name fb_poster gitcuppajoe/fbposter:debug",
+            "dependsOn":["docker-build"]
+        },
+        {
+            "label": "docker-build-run",
+            "dependsOn":["docker-run"]
+        },
+        {
+            "label": "cleanup",
+            "type": "shell",
+            "command": "docker kill fb_poster"
+        }
+    ]
+}
