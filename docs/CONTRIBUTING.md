@@ -1,4 +1,4 @@
-# Contributing to Unmanic
+# Contributing to FBPoster
 
 The following is a set of guidelines for contributing to the project,
 definitely not rules. Use your best judgment, and feel free to suggest changes.
